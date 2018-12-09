@@ -1,0 +1,31 @@
+{
+  "name": "json-server-advanced",
+  "version": "1.0.0",
+  "description": "REST API server based on multiple .JSON files",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./dist/app.js",
+    "lint": "./node_modules/.bin/eslint '**/*.js'"
+  },
+  "author": "Valeriy Zimnev",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "del": "^3.0.0",
+    "eslint": "^5.10.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-copy": "^4.0.1",
+    "gulp-nodemon": "^2.4.2",
+    "gulp-run": "^1.7.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "json-server": "^0.14.0",
+    "minimist": "^1.2.0",
+    "run-sequence": "^2.2.1"
+  },
+  "dependencies": {
+    "jmespath": "^0.15.0"
+  }
+}
