@@ -37,8 +37,10 @@ ScanDirectoryBootstrap().then(res => {
   const pathsList = res;
 
   pathsList.forEach(element => {
-    console.log('element', element);
-    server.use(element.parentName, jsonServer.router(element.pathName));
+    console.log(element.pathRltName);
+    // console.log(element.pathAbsName);
+    console.log();
+    server.use(element.parentName, jsonServer.router(element.pathAbsName));
   });
 
   

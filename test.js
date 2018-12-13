@@ -24,7 +24,8 @@ function ScanDirectory(_path, parentPath) {
         if(isFileJSON(file)) {
           const exitStat = {
             fileName: file,
-            pathName: absolutePath,
+            pathAbsName: absolutePath,
+            pathRltName: _pathName,
             parentName: parentPath ? `/${parentPath}` : '/'
           };
 
