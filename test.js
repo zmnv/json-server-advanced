@@ -23,8 +23,9 @@ function ScanDirectory(_path, parentPath) {
       if (stat.isFile()) {
         if(isFileJSON(file)) {
           const exitStat = {
-            name: absolutePath,
-            parentName: parentPath || '/'
+            fileName: file,
+            pathName: absolutePath,
+            parentName: parentPath ? `/${parentPath}` : '/'
           };
 
           // console.log(exitStat);
@@ -39,46 +40,17 @@ function ScanDirectory(_path, parentPath) {
       }
 
     });
-    
     memo.push(localStore);
-
-
-
-
-    // fs.readdir(_path, (err, files) => {
-
-    //   let localStore = {};
-      
-    //   files.forEach(file => {
-    //     const _pathName = _path + '/' + file;
-    //     const stat = fs.statSync(_pathName);
-    //     const absolutePath = path.join(__dirname, _pathName);
-  
-    //     // console.log(file);
-  
-    //     if (stat.isFile()) {
-    //       if(isFileJSON(file)) {
-    //         const exitStat = {
-    //           name: absolutePath,
-    //           parentName: parentPath || '/'
-    //         };
-
-    //         localStore = exitStat;
-    //       }
-    //     }
-  
-    //     if (stat.isDirectory()) {
-    //       // console.log('directory', file);
-    //       const _parentPath = parentPath ? parentPath+'/'+file : file;
-    //       ScanDirectory(_pathName, _parentPath);
-    //     }
-  
-    //   });
-    
-    //   console.log('localstore:', localStore);
-    // });
-
 }
 
-ScanDirectory('./db');
-console.log(memo);
+function ScanDirectoryBootstrap() {
+  return new Promise((resolve) => {
+    ScanDirectory('./db');
+
+    const exit = [];
+    memo.forEach(elem => exit.push(...elem));
+    resolve(exit);
+  });
+}
+
+module.exports = ScanDirectoryBootstrap;
