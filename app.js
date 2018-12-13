@@ -4,9 +4,13 @@ const path = require('path');
 const server = jsonServer.create();
 const middlewares = jsonServer.defaults();
 
-const database = require('./db/_entry');
+// const database = require('./db/_entry');
 
 console.log(require('./config/welcome'));
+
+
+
+
 
 // for (const prop1 in database) {
 //   server.use(`/${prop1}`, jsonServer.router(database[prop1]));
@@ -30,7 +34,7 @@ server.use(middlewares);
 //   console.log('');
 // }
 
-server.use(`/test`, jsonServer.router(path.join(__dirname, './db/lotcard/myitems.json')));
+server.use(`/`, jsonServer.router(path.join(__dirname, './db/lotcard/myitems.json')));
 
 server.set('port', process.env.PORT || 3000);
 server.listen(server.get('port'), () => {
