@@ -49,6 +49,13 @@ ScanDirectoryBootstrap().then(res => {
   const routesList = ScanRoutes(res.exit);
   const exitList = [];
   routesList.forEach(elem => exitList.push(...elem));
+  routesList.sort((a, b) => {
+    var x = a.parentName;
+    var y = b.parentName;
+    if (x < y) {return -1;}
+    if (x > y) {return 1;}
+    return 0;
+  })
 
   exitList.forEach(element => {
     console.log(` \x1b[90m§\x1b[0m \x1b[95m${element.slugName.slice(1)}\x1b[0m \x1b[1m\x1b[96mhttp://localhost:3000${element.slugName}\x1b[0m`);
