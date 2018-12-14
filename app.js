@@ -5,7 +5,7 @@ const jsonServer = require('json-server');
 const server = jsonServer.create();
 const middlewares = jsonServer.defaults();
 
-const ScanDirectoryBootstrap = require('./test');
+const ScanDirectoryBootstrap = require('./scanDirectory');
 const ScanRoutes = require('./scanRoutes');
 
 // const database = require('./db/_entry');
