@@ -1,9 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-function isFileJSON(file) {
-  return /(json)$/i.test(file);
-}
+const Tools = require('./config/tools');
 
 const memo = [];
 
@@ -21,12 +19,16 @@ function ScanDirectory(_path, parentPath) {
       // console.log(file);
 
       if (stat.isFile()) {
-        if(isFileJSON(file)) {
+        if(Tools.isFileJSON(file)) {
+          const fileToSlug = file.slice(0, -5);
+
           const exitStat = {
             fileName: file,
+            fileNameClear: fileToSlug,
+            parentChildName: parentPath ? parentPath + '/' + fileToSlug : fileToSlug,
+            parentName: parentPath ? `/${parentPath}` : '/',
             pathAbsName: absolutePath,
             pathRltName: _pathName,
-            parentName: parentPath ? `/${parentPath}` : '/'
           };
 
           // console.log(exitStat);
@@ -50,7 +52,10 @@ function ScanDirectoryBootstrap() {
 
     const exit = [];
     memo.forEach(elem => exit.push(...elem));
-    resolve(exit);
+
+    // console.log(exit);
+
+    resolve({exit, memo});
   });
 }
 
