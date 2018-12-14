@@ -21,7 +21,7 @@ function DeployAndRestartServer() {
             )
         )
     );
-    RestartServer();
+    // RestartServer();
 }
 
 module.exports = {
