@@ -14,7 +14,7 @@ function RestartServer() {
 
 function DeployAndRestartServer() {
     console.log(`${new Date()} \x1b[93mINCOMING COMMAND: DEPLOY SERVER\x1b[0m`);
-    exec("cd "+__dirname+" && git pull", puts);
+    exec("cd /home/json-server-advanced", exec("git pull", puts));
     RestartServer();
 }
 
