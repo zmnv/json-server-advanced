@@ -7,18 +7,14 @@ function puts(error, stdout, stderr) {
     if(stderr) console.log(stderr);
 }
 
-function RestartServer() {
-    console.log(`${new Date()} \x1b[91mINCOMING COMMAND: RESTART SERVER\x1b[0m`);
-    exec("pm2 restart json-server-3000", puts);
-}
+// function RestartServer() {
+//     console.log(`${new Date()} \x1b[91mINCOMING COMMAND: RESTART SERVER\x1b[0m`);
+//     exec("pm2 restart json-server-3000", puts);
+// }
 
 function DeployAndRestartServer() {
     console.log(`${new Date()} \x1b[93mINCOMING COMMAND: DEPLOY SERVER\x1b[0m`);
-    exec("cd "+__dirname+" && git pull", puts);
-    RestartServer();
+    exec("cd "+__dirname+" && git pull && pm2 restart json-server-3000", puts);
 }
 
-module.exports = {
-    RestartServer,
-    DeployAndRestartServer
-}
+module.exports = DeployAndRestartServer;
