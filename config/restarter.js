@@ -14,7 +14,7 @@ function puts(error, stdout, stderr) {
 
 function DeployAndRestartServer() {
     console.log(`${new Date()} \x1b[93mINCOMING COMMAND: DEPLOY SERVER\x1b[0m`);
-    exec("cd "+__dirname+" && git pull && pm2 restart json-server-3000", puts);
+    exec("pm2 restart json-server-3000", puts);
 }
 
 module.exports = DeployAndRestartServer;
