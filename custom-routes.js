@@ -1,7 +1,7 @@
 const jsonServer = require('json-server');
 const router = jsonServer.create();
 
-const DeployAndRestartServer = require('./config/restarter');
+const RestartServer = require('./config/restarter');
 
 // router.post('/restart', function (req, res) {
 //   res.json('Server Restart');
@@ -10,7 +10,7 @@ const DeployAndRestartServer = require('./config/restarter');
 
 router.post('/deploy', function (req, res) {
   res.json('Server Deploy');
-  DeployAndRestartServer();
+  RestartServer();
 });
 
 module.exports = {
