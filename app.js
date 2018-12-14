@@ -1,6 +1,4 @@
 const jsonServer = require('json-server');
-const fs = require('fs');
-const path = require('path');
 
 const server = jsonServer.create();
 const middlewares = jsonServer.defaults();
@@ -10,8 +8,11 @@ const ScanRoutes = require('./scanRoutes');
 
 const Tools = require('./config/tools');
 
+const customRoutes = require('./custom-routes');
+
 console.log(require('./config/welcome'));
 
+server.use('/service', customRoutes.router);
 server.use(middlewares);
 
 function ServerBootstrap() {
@@ -66,7 +67,6 @@ ScanDirectoryBootstrap().then(res => {
   const newList = {
     "routes": Tools.getListOfRoutes(routesList)
   }
-
   server.use('/', jsonServer.router(newList));
 
   ServerBootstrap();
