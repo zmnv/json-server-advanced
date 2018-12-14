@@ -12,4 +12,13 @@ function RestartServer() {
     exec("pm2 restart json-server-3000", puts);
 }
 
-module.exports = RestartServer;
+function DeployAndRestartServer() {
+    console.log(`${new Date()} \x1b[93mINCOMING COMMAND: DEPLOY SERVER\x1b[0m`);
+    exec("cd "+__dirname+" && git pull", puts);
+    RestartServer();
+}
+
+module.exports = {
+    RestartServer,
+    DeployAndRestartServer
+}
