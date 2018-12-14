@@ -14,7 +14,7 @@ function RestartServer() {
 
 function DeployAndRestartServer() {
     console.log(`${new Date()} \x1b[93mINCOMING COMMAND: DEPLOY SERVER\x1b[0m`);
-    exec("pm2 stop json-server-3000", () => console.log('\x1b[91mStop Server\x1b[0m'));
+    // exec("pm2 stop json-server-3000", () => console.log('\x1b[91mStop Server\x1b[0m'));
     exec("git pull", {cwd: '/home/json-server-advanced'}, puts);
     // setTimeout(() => {
     //     exec("pm2 start json-server-3000", () => console.log('\x1b[92mStart Server\x1b[0m'));
