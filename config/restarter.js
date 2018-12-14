@@ -1,5 +1,6 @@
 // var sys = require('sys')
-var exec = require('child_process').exec;
+// const path = require('path');
+const exec = require('child_process').exec;
 
 function puts(error, stdout, stderr) { 
     console.log(stdout) 
@@ -11,4 +12,13 @@ function RestartServer() {
     exec("pm2 restart json-server-3000", puts);
 }
 
-module.exports = RestartServer;
+function DeployAndRestartServer() {
+    console.log(`${new Date()} \x1b[93mINCOMING COMMAND: DEPLOY SERVER\x1b[0m`);
+    exec(`cd ${__dirname} && git pull`, puts);
+    RestartServer();
+}
+
+module.exports = {
+    RestartServer,
+    DeployAndRestartServer
+}
