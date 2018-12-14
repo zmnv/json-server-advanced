@@ -1,10 +1,12 @@
+
 const jsonServer = require('json-server');
-const path = require('path');
+// const path = require('path');
 
 const server = jsonServer.create();
 const middlewares = jsonServer.defaults();
 
 const ScanDirectoryBootstrap = require('./test');
+const ScanRoutes = require('./scanRoutes');
 
 // const database = require('./db/_entry');
 
@@ -34,14 +36,29 @@ function ServerBootstrap() {
 ScanDirectoryBootstrap().then(res => {
   // console.log('promise resole', res);
 
-  const pathsList = res;
+  const pathsList = res.exit;
+  let filesCounter = 0;
+  let routesCounter = 0;
 
   pathsList.forEach(element => {
-    console.log(element.pathRltName);
-    // console.log(element.pathAbsName);
-    console.log();
+    filesCounter = filesCounter + 1;
+    
     server.use(element.parentName, jsonServer.router(element.pathAbsName));
   });
+
+  const routesList = ScanRoutes(res.exit);
+  const exitList = [];
+  routesList.forEach(elem => exitList.push(...elem));
+
+  exitList.forEach(element => {
+    console.log(` \x1b[90m§\x1b[0m \x1b[95m${element.slugName.slice(1)}\x1b[0m \x1b[1m\x1b[96mhttp://localhost:3000${element.slugName}\x1b[0m`);
+    console.log(`   \x1b[90m${element.pathRltName}\x1b[0m`);
+    console.log();
+    routesCounter = routesCounter + 1;
+  })
+
+  server.use('/server', jsonServer.router({"routes": routesList}));
+
 
   
   ServerBootstrap();
