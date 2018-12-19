@@ -2,14 +2,75 @@
   "myitems": [
     {
       "id": 1544813668565,
-      "lot_id": "",
-      "title": "",
-      "price": "",
-      "category": "",
-      "category_short": "",
-      "time": "",
-      "image": "",
-      "photo_count": ""
+      "lot_id": 12655243,
+      "title": "Строительные материалы, металлочерепица, профлист, профильная труба, ондулин, полисэнд, водостоки, теплицы, поликарбонат, утеплитель, термит, шифер, кровля, сайдинг, L-брус, сайдинг бревно доставка и расчет на месте",
+      "price": "объявление",
+      "category": "Строительство и ремонт / Строительные материалы / Кровельные материалы, гидроизоляция",
+      "category_short": "Кровельные материалы, гидроизоляция",
+      "time": "3 дня (12.01.2019 14:33)",
+      "image": "https://media2.24aul.ru/imgs/5bf236d9ed49b80001dd9cc0/stroitelnye-materialy-metallocherepitsa-proflist-1-12655243.jpg",
+      "photo_count": "21"
+    },
+    {
+      "id": 1544814668566,
+      "lot_id": 11703455,
+      "title": "Продам карабин Benelli ARGO",
+      "price": "70 000 руб.",
+      "category": "Туризм, охота, самооборона / Охота / Оружие",
+      "category_short": "Оружие",
+      "time": "9 дней (27 дек 2018 08:47)",
+      "image": "https://media2.24aul.ru/imgs/5b2cad1f5c0b7a0001c21ae2/prodam-karabin-benelli-argo-1-11703455.jpg",
+      "photo_count": "8"
+    },
+    {
+      "id": 1544814668566,
+      "lot_id": 11227579,
+      "title": "Высококачественный USB Type-C кабель Suntaiho для быстрой зарядки в тканой оплётке из нейлона (повышенной прочности) 1м черный [Т1]",
+      "price": "150 руб.",
+      "category": "Телефоны, связь, навигация / Аксессуары / Дата-кабели, переходники",
+      "category_short": "Дата-кабели, переходники",
+      "time": "6 дней (24 дек 2018 08:48)",
+      "image": "https://media2.24aul.ru/imgs/5ab3e86d231ede12ec0dccef/vysokokachestvennyy-usb-type-c-kabel-suntaiho-dlya-1-11227579.jpg",
+      "photo_count": "4"
+    },
+    {
+      "id": 1544814668566,
+      "lot_id": 2908727,
+      "title": "Диван мини аккордеон 80*200",
+      "price": "11 000 руб.",
+      "category": "Мебель / Детская мебель / Детские диваны",
+      "category_short": "Детские диваны",
+      "time": "2 дня (20 дек 2018 08:48)",
+      "image": "https://media2.24aul.ru/imgs/5a06fc0e23bbeb0e14ad9e6f/divan-mini-akkordeon-80-200-1-2908727.jpg",
+      "photo_count": "1"
+    },
+    {
+      "id": 1544814668566,
+      "lot_id": 2908727,
+      "title": "Марк Твен собрание сочинений 8 томов, не читан!",
+      "price": "480 руб.",
+      "blitz": "2 400 руб.",
+      "bids": 31,
+      "category": "Литература, аудиокниги / Художественная",
+      "category_short": "Художественная",
+      "tags": [
+        "повесть, рассказ"
+      ],
+      "time": "2 дня (20 дек 2018 08:48)",
+      "image": "https://media2.24aul.ru/imgs/5bbab0f5ed49b80001cdb924/mark-tven-sobranie-sochineniy-8-tomov-ne-chitan-1-12277130.jpg",
+      "photo_count": "1"
+    },
+    {
+      "id": 1544814668566,
+      "lot_id": 12042704,
+      "title": "Буровая установка армейская",
+      "price": "170 000 руб.",
+      "blitz": "205 000 руб.",
+      "category": "Бизнес / Оборудование / Строительное",
+      "category_short": "Детские диваны",
+      "time": "5 ч 15 мин (17 дек 2018 16:28)",
+      "image": "https://media2.24aul.ru/imgs/5b925cd9624140000105de87/burovaya-ustanovka-armeyskaya-2-12042704.jpg",
+      "photo_count": "7"
     }
   ]
 }
